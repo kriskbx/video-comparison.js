@@ -1,0 +1,31 @@
+{
+  "name": "video-comparison",
+  "version": "0.0.1",
+  "description": "html5 video comparison slider library",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kriskbx/video-comparison.git"
+  },
+  "keywords": [
+    "html5",
+    "slider",
+    "video",
+    "comparison"
+  ],
+  "author": "kriskbx",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kriskbx/video-comparison/issues"
+  },
+  "homepage": "https://github.com/kriskbx/video-comparison",
+  "devDependencies": {
+	"grunt": "~0.4.1",
+	"grunt-contrib-clean": "~0.4.1",
+	"grunt-contrib-cssmin": "~0.10.0",
+	"grunt-contrib-uglify": "~0.5.0"
+  }
+}
