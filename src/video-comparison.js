@@ -137,9 +137,28 @@ var VCSJS = (function () {
 			// Mouseup	
 			window.addEventListener( 'mouseup', function() {
 				wrapper.removeEventListener( 'mousemove', VCSJS.slide, true );
-			}, false );
-			// Loop the videos
-		    var video = wrapper.getElementsByTagName( 'video' )[0];
+			}, false );			
+			var videos = wrapper.getElementsByTagName( 'video' );
+		    var video = videos[0];
+		    // Add Click-Handler for play/pause
+		    for( var i = 0; i < videos.length; i++ ) {
+			    videos[i].parentNode.addEventListener( 'click' , function() {
+					var video = this.getElementsByTagName('video')[0];
+					var wrapper = this.parentNode;
+					var videos = wrapper.getElementsByTagName('video');
+					if( video.paused ) {
+						for( var j = 0; j < videos.length; j++ ) {
+							videos[j].play();
+						}
+					} else {
+						for( var j = 0; j < videos.length; j++ ) {
+							videos[j].pause();
+						}
+					}	   
+			    } );
+		    }
+		    
+		    // Loop the videos
 		    if( wrapper.getAttribute( 'data-loop' ) == "true" ) {
 			   video.addEventListener( 'ended', function () {
 				    self.playVideos( wrapper );
