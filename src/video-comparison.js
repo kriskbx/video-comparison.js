@@ -149,10 +149,20 @@ var VCSJS = (function () {
 					if( video.paused ) {
 						for( var j = 0; j < videos.length; j++ ) {
 							videos[j].play();
+							if( typeof jQuery !== "undefined" ) {
+								if( typeof jQuery.synchronizeVideos === "function" ) {
+									jQuery( document ).trigger( "sjs:play" );
+								}
+							}
 						}
 					} else {
 						for( var j = 0; j < videos.length; j++ ) {
 							videos[j].pause();
+							if( typeof jQuery !== "undefined" ) {
+								if( typeof jQuery.synchronizeVideos === "function" ) {
+									jQuery( document ).trigger( "sjs:pause" );
+								}
+							}
 						}
 					}	   
 			    } );
